@@ -1,0 +1,85 @@
+<!-- course list -->
+<div class="row justify-content-center" id="courseContainer">
+  <!-- courses will be rendered here by JavaScript -->
+</div>
+
+<script>
+
+ let courses =  {
+  "courses": [
+    {
+      "id": 1,
+      "title": "Close Protection (Level 3)",
+      "icon": "🛡️",
+      "image": "images/courses/course-1.jpg",
+      "category": "Security Training",
+      "description": "Train for professional Close Protection roles with instructors who bring real-world military and UHNW security experience. Practical, scenario-based training for modern security operations.",
+      "button": "View Course",
+      "link": "course-single.html"
+    },
+    {
+      "id": 2,
+      "title": "SIA Door Supervisor",
+      "icon": "🚪",
+      "image": "images/courses/course-2.jpg",
+      "category": "Security Training",
+      "description": "Gain your SIA Door Supervisor licence and start working across nightlife, events, retail, and corporate security roles with strong earning potential.",
+      "button": "View Course",
+      "link": "course-single.html"
+    },
+    {
+      "id": 3,
+      "title": "Conflict Management",
+      "icon": "⚠️",
+      "image": "images/courses/course-3.jpg",
+      "category": "Security Training",
+      "description": "Learn professional techniques to prevent, de-escalate, and manage conflict safely in high-risk and public-facing environments.",
+      "button": "View Course",
+      "link": "course-single.html"
+    },
+    {
+      "id": 4,
+      "title": "Physical Intervention",
+      "icon": "🤝",
+      "image": "images/courses/course-4.jpg",
+      "category": "Security Training",
+      "description": "Safe, legal, and professional physical intervention training designed to protect staff, clients, and organisations when conflict escalates.",
+      "button": "View Course",
+      "link": "course-single.html"
+    },
+    {
+      "id": 5,
+      "title": "Emergency Care First Aid (Level 3)",
+      "icon": "🚑",
+      "image": "images/courses/course-5.jpg",
+      "category": "First Aid",
+      "description": "Comprehensive first aid training for medium to high-risk workplaces, delivered through practical, scenario-based instruction.",
+      "button": "View Course",
+      "link": "course-single.html"
+    }
+  ]
+}
+
+  // Load and render courses from JSON
+
+      const courseContainer = document.getElementById('courseContainer');
+      courseContainer.innerHTML = courses.courses.map(course => `
+        <div class="col-lg-4 col-sm-6 mb-5">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="${course.image}" alt="${course.title}">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><a class="text-color" href="${course.link}">${course.category}</a></li>
+              </ul>
+              <a href="${course.link}">
+                <h4 class="card-title">${course.title}</h4>
+              </a>
+              <p class="card-text mb-4">${course.description}</p>
+              <a href="${course.link}" class="btn btn-primary btn-sm">${course.button}</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+ 
+</script>
+<!-- /course list -->
